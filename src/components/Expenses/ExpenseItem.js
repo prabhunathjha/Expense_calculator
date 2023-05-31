@@ -6,21 +6,21 @@ import Card from '../Card';
 
 function ExpenseItem (props) {
 const [title,setTitle] = useState(props.title);
-console.log('ExpenseItem evaluated by react')
+console.log('ExpenseItem')
 
 const clickHandler = () => {
-        setTitle  ("updated");
-        console.log(title);
+    setTitle("updated");
+    console.log(title);
     };
 
     return  (
     <Card className='expense-item' >
     <ExpenseDate date = {props.date}/> 
     <div className='expense-item__description'>
-        <h2>{title}</h2>
-        <div className='expense-item__price'>${props.amount}</div>
+    <h2>{title}</h2>
+    <div className='expense-item__price'>${props.amount}</div>
+    <button onClick={clickHandler} >change title</button>
     </div>
-        <button onClick={clickHandler} >change title</button>
     </Card>
     );
 }
